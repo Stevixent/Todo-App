@@ -21,3 +21,100 @@ body{
     border-radius: 8px;
     background: #ccc;
 }
+
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(89, 201, 232);
+    transition: 0.3s ease-in-out;
+}
+
+.container{
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 90px auto 0;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .input-field{
+    position: relative;
+    height: 64px;
+    width: 100%;
+}
+
+.input-field textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 18px 45px 18px 15px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.input-field textarea:focus{
+    border-color: #4070f4;
+}
+
+textarea::-webkit-scrollbar{
+    display: none;
+}
+
+.container .todolists{
+    max-height: 380px; 
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.container .list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 20px 15px;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    margin-top: 10px; 
+    position: relative;
+    cursor: pointer;
+}
+
+.todolists .list input{
+    height: 16px; 
+    min-width: 16px;
+    accent-color: #4070f4;
+    pointer-events: none    ;
+}
+
+.todolists .list .task{
+    margin: 0 30px 0 15px;
+    word-break: break-all;
+}
+
+.list input:checked ~ .task{
+    text-decoration: line-through;
+}
+
+.container .pending-tasks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.pending-tasks span{
+    color: #333;
+}
+
+.pending-tasks .clear-button{
+    padding: 6px 12px; 
+    outline: none;
+    border: none;
+    background: #4070f4;
+    color: #fff;
+    font-size: 14px ;
+    border-radius: 4px;
+    cursor: pointer;
+}
