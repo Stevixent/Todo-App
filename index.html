@@ -11,9 +11,27 @@
     <div class="container">
         <div class="input-field">
             <img src="menu2.png" alt="icon">
-            <input placeholder="Enter your new todo">
-        </div>
-
+            <input type="text" placeholder="Enter your new todo">
+           </div>
+           <div class="controls">
+            <div class="filters">
+                <span id="all">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+           </div>
+           <ul class="task-box">
+            <li class="task">
+                <label for="">
+                    <input type="checkbox" id="1" >
+                    <p>Renew gym membership</p>
+                </label>
+                <div class="settings">
+                    <i class="uil uil-ellipsis-h"></i>
+                </div>
+            </li>
+           </ul>
     </div>
     <script src="main.js"></script>
 </body>
