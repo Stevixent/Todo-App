@@ -8,15 +8,15 @@ body{
     font-family: cursive;
 }
 
-/* section{ 
+ section{ 
     margin-top: 80px;
-}*/
+}
 
 h1{
     text-align: center;
     color: #fff;
     /* font-size: 50px; */
-    /* margin-bottom: 60ps; */
+    margin-bottom: 60ps;
 }
 
 .wrapper{
@@ -26,7 +26,7 @@ h1{
 .input-container{
     display: flex;
     justify-content: center;
-    height: 47px;
+    height: 52px;
 }
 
 input, button{
@@ -59,7 +59,7 @@ input, button{
 } 
 
 .todo-container{
-    /* margin-top: 40px; */
+    margin-top: 40px;
     padding: 0;
 }
 
@@ -97,4 +97,27 @@ input, button{
     color:#fff ;
     background: #05cf5b;
     cursor: pointer;
+}
+
+.todo-container .todo-delete{
+    color: #ff5762;
+    background: #fff;
+    font-size: 16px;
+    border-left: 2px solid #eee;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.todo-container .todo-delete:hover{
+    color:#fff ;
+    background:#ff5762 ;
+    cursor: pointer;
+}
+
+.todo-container .todo li{
+    flex: 10;
+    padding: 16px;
+    list-style-type: none;
+    margin: 0;
+    line-height: 1.5;
 }
