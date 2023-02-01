@@ -7,6 +7,7 @@
     <title>TODO APP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     
@@ -14,7 +15,7 @@
         <h1>TODO APP</h1>
         <div class="wrapper">
             <div class="input-container">
-                <input type="text" name="todo" class="todo-input" id="todo-input">
+                <input type="text" name="todo" class="todo-input" id="todo-input" placeholder="Enter Todo Task">
                 <button class="add-button" id="add-button">
                     <i class="fa-solid fa-circle-plus"></i> 
                 </button>
@@ -22,6 +23,54 @@
             <ul class="todo-container" id="todo-container"></ul>
         </div>
     </section> 
+     
+    <script>
+        addButton = document.getElementById("add-button");
+        todoContainer = document.getElementById("todo-container");
+        todoInput = document.getElementById("todo-input");
 
+        addButton.addEventListener("click", (e) => {
+            let todo = document.createElement("div");
+            todo.classList.add("todo");
+
+            let li = document.createElement("li");
+            li.innerText = `${todoInput.value}`;
+            todo.appendChild(li);
+
+            let checkButton = document.createElement("button");
+            checkButton.innerHTML = '<i class="fa-solid fa-circle-plus"></i>';
+            checkButton.classList.add("todo-check");
+            todo.appendChild(checkButton);
+
+            let deleteButton = document.createElement("button");
+            deleteButton.innerHTML = '<i class="fa-solid fa-circle-minus"></i>';
+            deleteButton.classList.add("todo-delete");
+            todo.appendChild(deleteButton);
+
+            if (todoInput.value === "") {
+                alert("Please Enter Some Text");
+            }
+            else{
+                todoContainer.appendChild(todo);
+            }
+
+            todoInput.value = "";
+        });
+
+        todoContainer.addEventListener("click", (e) => {
+            let target = e.target;
+            if (target.classList.contains("todo-delete")) {
+                let item = target.parentElement;
+                item.remove();
+            }
+
+            if (target.classList.contains("todo-check")) {
+                let item = target.parentElement;
+                item.classList.toggle("completed");
+
+            }
+        });
+
+    </script>
 </body>
 </html>
